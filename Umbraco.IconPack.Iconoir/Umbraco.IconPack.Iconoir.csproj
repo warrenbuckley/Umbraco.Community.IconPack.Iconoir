@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Umbraco.IconPack.Iconoir</PackageId>
+    <Product>Umbraco.IconPack.Iconoir</Product>
+    <Title>Umbraco Icon Pack: Iconoir</Title>
+    <Description>An icon pack for Umbraco V14+ that uses the Iconoir open source icons</Description>
+    <PackageTags>umbraco plugin package</PackageTags>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="14.0.0-rc2" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="14.0.0-rc2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+</Project>

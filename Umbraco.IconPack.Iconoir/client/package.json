@@ -1,0 +1,22 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:iconpack": "node ./scripts/GenerateIconPack.js"
+  },
+  "dependencies": {
+    "iconoir": "^7.7.0",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "@umbraco-cms/backoffice": "^14.0.0-rc2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

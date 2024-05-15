@@ -484,3 +484,4 @@ $RECYCLE.BIN/
 *.swp
 Umbraco.IconPack.Iconoir/wwwroot/App_Plugins
 Umbraco.IconPack.Iconoir/client/public/Iconoir
+Umbraco.IconPack.Iconoir/client/src/IconPacks/icons.ts
