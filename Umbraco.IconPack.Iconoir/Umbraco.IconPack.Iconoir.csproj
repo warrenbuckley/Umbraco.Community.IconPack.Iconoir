@@ -3,15 +3,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <PropertyGroup>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <!-- Nuget properties -->
+  <PropertyGroup>
     <PackageId>Umbraco.IconPack.Iconoir</PackageId>
-    <Product>Umbraco.IconPack.Iconoir</Product>
     <Title>Umbraco Icon Pack: Iconoir</Title>
-    <Description>An icon pack for Umbraco V14+ that uses the Iconoir open source icons</Description>
-    <PackageTags>umbraco plugin package</PackageTags>
+    <Authors>warrenbuckley</Authors>
+    <Company>Hack Make Do</Company>
+    <Description>An Umbraco V14 icon pack that uses the Iconoir open source icons</Description>
+    <PackageProjectUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>umbraco-marketplace;umbraco;umbraco-v14;umbraco-iconpack;iconoir;</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
 
@@ -20,8 +31,24 @@
     <PackageReference Include="Umbraco.Cms.Web.Common" Version="14.0.0-rc2" />
   </ItemGroup>
 
-
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <!-- Dont include the client folder as part of packaging nuget build -->
+    <Content Remove="Client\**" />
+
+    <!-- However make the Umbraco-package.json not part of the nuget package but visible to the solution -->
+    <None Include="Client\public\umbraco-package.json" Pack="false" />
   </ItemGroup>
+
+  <!-- Files to be inlcuded as part of Nuget Package (Icon & Readme) -->
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+
+  <!--<ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>-->
 </Project>
