@@ -9,6 +9,20 @@ if (Test-Path $outputDirectory) {
     Remove-Item "$outputDirectory/*"
 }
 
+# Save the current directory
+Push-Location
+
+# Change the current directory to the JS client folder
+Set-Location "./Umbraco.IconPack.Iconoir/client"
+
+# Run the Node.js command/s
+npm install
+npm run build:iconpack
+npm run build
+
+# Go back to the previous directory
+Pop-Location
+
 # Pack the project into a NuGet package
 dotnet pack $projectFile --configuration $configuration --output $outputDirectory /p:Version=$version
 
