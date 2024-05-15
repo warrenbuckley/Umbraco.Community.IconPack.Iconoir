@@ -483,3 +483,4 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 Umbraco.IconPack.Iconoir/wwwroot/App_Plugins
+Umbraco.IconPack.Iconoir/client/public/Iconoir
