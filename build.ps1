@@ -16,9 +16,9 @@ Push-Location
 Set-Location "./Umbraco.IconPack.Iconoir/client"
 
 # Run the Node.js command/s
-npm install
-npm run build:iconpack
-npm run build
+npm install             ## Usual NPM install - gets the Iconoir package & its SVGs
+npm run build:iconpack  ## Runs the custom NPM script (copies the SVGs into a JS file and creates an Icon Dictionary)
+npm run build           ## Vite build to create the JS bundle that we will ship
 
 # Go back to the previous directory
 Pop-Location
