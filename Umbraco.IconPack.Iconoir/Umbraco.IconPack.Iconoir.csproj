@@ -21,11 +21,16 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>umbraco-marketplace;umbraco;umbraco-v14;umbraco-iconpack;iconoir;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Umbraco.Community.IconPacks.Iconoir.Logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Dont include the client folder as part of packaging nuget build -->
     <Content Remove="Client\**" />
+    <None Include="..\.github\Umbraco.Community.IconPacks.Iconoir.Logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
 
     <!-- However make the Umbraco-package.json not part of the nuget package but visible to the solution -->
     <None Include="Client\public\umbraco-package.json" Pack="false" />
