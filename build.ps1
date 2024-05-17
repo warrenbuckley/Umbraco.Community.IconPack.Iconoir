@@ -1,5 +1,5 @@
 # Define the project file and configuration
-$projectFile = "./Umbraco.IconPack.Iconoir/Umbraco.IconPack.Iconoir.csproj"
+$projectFile = "./Umbraco.Community.IconPack.Iconoir/Umbraco.Community.IconPack.Iconoir.csproj"
 $configuration = "Release"
 $outputDirectory = "./build.out"
 
@@ -12,7 +12,7 @@ if (Test-Path $outputDirectory) {
 Push-Location
 
 # Change the current directory to the JS client folder
-Set-Location "./Umbraco.IconPack.Iconoir/client"
+Set-Location "./Umbraco.Community.IconPack.Iconoir/client"
 
 # Run the Node.js command/s
 npm install             ## Usual NPM install - gets the Iconoir package & its SVGs
