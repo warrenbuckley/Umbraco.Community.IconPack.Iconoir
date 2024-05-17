@@ -485,3 +485,6 @@ $RECYCLE.BIN/
 Umbraco.Community.IconPack.Iconoir/wwwroot/App_Plugins
 Umbraco.Community.IconPack.Iconoir/client/public/Iconoir
 Umbraco.Community.IconPack.Iconoir/client/src/IconPacks/icons.ts
+Umbraco.Community.IconPack.Iconoir/appsettings-schema.json
+Umbraco.Community.IconPack.Iconoir/appsettings-schema.Umbraco.Cms.json
+Umbraco.Community.IconPack.Iconoir/umbraco-package-schema.json

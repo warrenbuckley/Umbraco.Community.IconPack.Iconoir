@@ -27,6 +27,12 @@
   <ItemGroup>
     <!-- Dont include the client folder as part of packaging nuget build -->
     <Content Remove="Client\**" />
+	
+	<!-- Dont include the files that are coming from Umbraco.Cms nuget package dependancy -->
+    <Content Remove="appsettings-schema.json" />
+    <Content Remove="appsettings-schema.Umbraco.Cms.json" />
+    <Content Remove="umbraco-package-schema.json" />
+	  
     <None Include="..\.github\Umbraco.Community.IconPacks.Iconoir.Logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
