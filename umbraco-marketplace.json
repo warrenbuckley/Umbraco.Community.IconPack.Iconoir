@@ -13,5 +13,11 @@
         "SyncContributorsFromRepository": true
     },
     "Tags": [ "Icon", "Icons", "IconPack", "Iconoir", "SVG Icons", "SVG" ],
-    "IssueTrackerUrl": "https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/issues"   
+    "IssueTrackerUrl": "https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/issues",
+    "Screenshots": [
+        {
+            "Caption": "Sample set of icons from Iconoir",
+            "ImageUrl": "https://raw.githubusercontent.com/warrenbuckley/Umbraco.Community.IconPack.Iconoir/main/.github/iconoir-sample.png"
+        }
+    ]
 }
