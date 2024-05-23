@@ -56,7 +56,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms" Version="14.0.0-rc3" />
+    <PackageReference Include="Umbraco.Cms" Version="14.0.0-rc4" />
   </ItemGroup>
 	
 </Project>
