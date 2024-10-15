@@ -9,7 +9,7 @@
       "name": "Umbraco IconPack Iconoir Entrypoint",
       "alias": "Umbraco.IconPack.Iconoir.Entrypoint",
       "type": "entryPoint",
-      "js": "/app_plugins/Umbraco.IconPack.Iconoir/iconpack-iconoir.js"
+      "js": "/App_Plugins/Umbraco.IconPack.Iconoir/iconpack-iconoir.js"
     }
   ]
 }
