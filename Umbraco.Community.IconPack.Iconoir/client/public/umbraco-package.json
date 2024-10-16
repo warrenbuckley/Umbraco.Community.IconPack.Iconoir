@@ -3,7 +3,7 @@
   "id": "Umbraco.IconPack.Iconoir",
   "name": "Icon Pack: Iconoir",
   "allowPackageTelemetry": true,
-  "version": "7.7.0",
+  "version": "7.9.0",
   "extensions": [
     {
       "name": "Umbraco IconPack Iconoir Entrypoint",

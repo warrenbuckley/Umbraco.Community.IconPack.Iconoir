@@ -10,8 +10,7 @@
     "build:iconpack": "node ./scripts/GenerateIconPack.js"
   },
   "dependencies": {
-    "iconoir": "^7.7.0",
-    "lit": "^3.1.2"
+    "iconoir": "^7.9.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.8",
