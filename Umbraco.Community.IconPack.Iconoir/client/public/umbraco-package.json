@@ -8,7 +8,7 @@
     {
       "name": "Umbraco IconPack Iconoir Entrypoint",
       "alias": "Umbraco.IconPack.Iconoir.Entrypoint",
-      "type": "entryPoint",
+      "type": "backofficeEntryPoint",
       "js": "/App_Plugins/Umbraco.IconPack.Iconoir/iconpack-iconoir.js"
     }
   ]
