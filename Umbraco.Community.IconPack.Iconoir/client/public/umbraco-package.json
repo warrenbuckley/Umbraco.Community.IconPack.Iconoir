@@ -1,8 +1,8 @@
 {
-  "$schema": "../../../Umbraco.Iconoir.IconPack.Website/umbraco-package-schema.json",
+  "$schema": "../../../Umbraco.Community.IconPack.Iconoir.Website/umbraco-package-schema.json",
   "id": "Umbraco.IconPack.Iconoir",
   "name": "Icon Pack: Iconoir",
-  "allowPackageTelemetry": true,
+  "allowTelemetry": true,
   "version": "7.9.0",
   "extensions": [
     {
