@@ -1,6 +1,4 @@
-import { ManifestIcons } from "@umbraco-cms/backoffice/extension-registry";
-
-const iconPack: ManifestIcons = {
+const iconPack: UmbExtensionManifest = {
     type: 'icons',
     name: '[Iconpack] Iconoir',
     alias: 'IconPack.Iconoir',
