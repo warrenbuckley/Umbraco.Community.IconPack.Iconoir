@@ -19,5 +19,6 @@
             "Caption": "Sample set of icons from Iconoir",
             "ImageUrl": "https://raw.githubusercontent.com/warrenbuckley/Umbraco.Community.IconPack.Iconoir/main/.github/iconoir-sample.png"
         }
-    ]
+    ],
+    "VersionDependencyMode": "SemVer"
 }
