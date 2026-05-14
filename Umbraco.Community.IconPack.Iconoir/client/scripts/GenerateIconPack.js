@@ -19,6 +19,8 @@ const run = async () => {
 
     const buildTime = new Date().toISOString();
 
+    const iconMetadata = await fetchIconMetadata(version);
+
     // Read all .svgs in the directory
     const iconFiles = readdir(svgDirectory, (err, files) => {
         if (err) {
@@ -121,6 +123,88 @@ export default icons;`;
             console.error('Error writing file:', err);
         }
     });
+}
+
+/**
+ * Fetches the Iconoir icons.csv from GitHub, which maps each icon filename to
+ * its category and comma-separated search tags. Tries the version-tagged URL
+ * first (so the metadata matches the exact npm release in use), then falls back
+ * to the main branch, and finally returns an empty Map so the build still
+ * succeeds when the network is unavailable or the tag doesn't exist yet.
+ */
+async function fetchIconMetadata(version) {
+    const urls = [
+        `https://raw.githubusercontent.com/iconoir-icons/iconoir/v${version}/iconoir.com/icons.csv`,
+        'https://raw.githubusercontent.com/iconoir-icons/iconoir/main/iconoir.com/icons.csv',
+    ];
+
+    for (const url of urls) {
+        try {
+            console.log(`Fetching icon metadata from: ${url}`);
+            const response = await fetch(url);
+            if (!response.ok) {
+                console.warn(`Got HTTP ${response.status} from ${url}, trying next URL`);
+                continue;
+            }
+            const csvText = await response.text();
+            const metadata = parseIconCsv(csvText);
+            console.log(`Fetched icon metadata for ${metadata.size} icons`);
+            return metadata;
+        } catch (e) {
+            console.warn(`Failed to fetch from ${url}: ${e.message}`);
+        }
+    }
+
+    console.warn('Could not fetch icon metadata — keywords/groups will be omitted from this build');
+    return new Map();
+}
+
+function parseIconCsv(csvText) {
+    const metadata = new Map();
+    const lines = csvText.split('\n');
+
+    // Skip header row: filename,category,tags
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+
+        const [filename, category, tagsRaw] = parseCsvLine(line);
+        if (!filename) continue;
+
+        const keywords = (tagsRaw ?? '')
+            .split(',')
+            .map(t => t.trim())
+            .filter(t => t.length > 0);
+
+        metadata.set(filename.trim(), {
+            keywords,
+            groups: category?.trim() ? [category.trim()] : [],
+        });
+    }
+
+    return metadata;
+}
+
+// Splits a single CSV line into fields, respecting double-quoted fields that
+// may contain commas (e.g. the tags column: "fly,jet,plane").
+function parseCsvLine(line) {
+    const fields = [];
+    let current = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        if (char === '"') {
+            inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+            fields.push(current);
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    fields.push(current);
+    return fields;
 }
 
 function UpdateUmbracoPackageVersionWithNpmVersion(version) {
