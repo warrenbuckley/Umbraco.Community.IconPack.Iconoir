@@ -39,7 +39,7 @@ const run = async () => {
 
         GenerateSvgJsModules(svgFiles, buildTime, version);
 
-        GenerateIconDictionary(svgFiles, buildTime, version);
+        GenerateIconDictionary(svgFiles, buildTime, version, iconMetadata);
 
         UpdateUmbracoPackageVersionWithNpmVersion(version);
     });    
@@ -82,10 +82,10 @@ export default \`${fileContent}\`;`;
     });
 };
 
-function GenerateIconDictionary(svgFileNames, buildTime, version){
+function GenerateIconDictionary(svgFileNames, buildTime, version, iconMetadata){
 
     console.log('Generating icon dictionary .ts file');
-    
+
     // Initialize an empty array for the icon dictionary
     const icons = [];
 
@@ -99,6 +99,15 @@ function GenerateIconDictionary(svgFileNames, buildTime, version){
             name: `iconoir-${baseName}`,
             path: `/App_Plugins/Umbraco.IconPack.Iconoir/Iconoir/${baseName}.js`,
         };
+
+        // Enrich with keywords and groups from the Iconoir CSV when available.
+        // Umbraco 17.4+ uses these for enhanced semantic icon search; older
+        // versions simply ignore the extra fields.
+        const meta = iconMetadata.get(baseName);
+        if (meta) {
+            if (meta.keywords.length > 0) icon.keywords = meta.keywords;
+            if (meta.groups.length > 0) icon.groups = meta.groups;
+        }
 
         // Add the icon object to the icon dictionary
         icons.push(icon);
