@@ -29,8 +29,12 @@ Write-Output "Iconoir NPM Package version: $version"
 # Go back to the previous directory
 Pop-Location
 
-# Pack the project into a NuGet package
-dotnet pack $projectFile --configuration $configuration --output $outputDirectory /p:Version=$version
+# Pack the project into a NuGet package.
+# The pack revision allows us to ship pack-level improvements (e.g. icon
+# keywords support) independently of a new Iconoir npm release.
+# Reset to 0 (or remove the suffix) when a new Iconoir version is picked up.
+$packRevision = 1
+dotnet pack $projectFile --configuration $configuration --output $outputDirectory /p:Version="$version.$packRevision"
 
 # Check if the pack was successful
 if ($LASTEXITCODE -eq 0) {
