@@ -15,11 +15,11 @@
     <Title>Umbraco Icon Pack: Iconoir</Title>
     <Authors>warrenbuckley</Authors>
     <Company>Hack Make Do</Company>
-    <Description>An Umbraco V14 icon pack that uses the Iconoir open source icons</Description>
+    <Description>An Umbraco icon pack that uses the Iconoir open source icons, with keyword and group metadata for enhanced icon search (Umbraco 17.4+)</Description>
     <PackageProjectUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</PackageProjectUrl>
     <RepositoryUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>umbraco-marketplace;umbraco;umbraco-v14;umbraco-iconpack;iconoir;</PackageTags>
+    <PackageTags>umbraco-marketplace;umbraco;umbraco-iconpack;iconoir;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>Umbraco.Community.IconPacks.Iconoir.Logo.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -56,7 +56,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms" Version="15.3.1" />
+    <PackageReference Include="Umbraco.Cms" Version="17.4.0" />
   </ItemGroup>
 	
 </Project>
