@@ -16,8 +16,8 @@
     <Authors>warrenbuckley</Authors>
     <Company>Hack Make Do</Company>
     <Description>An Umbraco icon pack that uses the Iconoir open source icons, with keyword and group metadata for enhanced icon search (Umbraco 17.4+)</Description>
-    <PackageProjectUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/warrenbuckley/Umbraco.Iconpack.Iconoir/tree/master</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/warrenbuckley/Umbraco.Community.IconPack.Iconoir</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/warrenbuckley/Umbraco.Community.IconPack.Iconoir</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>umbraco-marketplace;umbraco;umbraco-iconpack;iconoir;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
